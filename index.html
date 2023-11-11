@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENTREGA 3 DE Javascript: BOT VS HUMANO</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    
+  </head>
+  <body>
+    <!-- Ejemplo de etiquetas que pueden ser vista con facilidad por el usuario en la pantalla del navegador. -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+      <main class="container">
+        <div class="container v">
+            <div class="col text-center">
+            <h1>CHATGAMES V.1</h1>
+            </div>
+        </div>
+      <div class="row clearfix">
+          <div class="col-lg-12">
+              <div class="card chat-app">
+                  <div id="plist" class="people-list">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa fa-search"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Search...">
+                      </div>
+                      <ul class="list-unstyled chat-list mt-2 mb-0">
+                          <li class="clearfix active" id ="chatlist1" data-chat="chat1" onclick="abrirChat('chat1')">
+                              <img src="./img/avatar2.png" alt="avatar">
+                              <div class="about">
+                                  <div class="name">BOT</div>
+                                  <div class="status"> <i class="fa fa-circle online"></i> activo </div>                                            
+                              </div>
+                          </li>
+                          <li class="clearfix"  id ="chatlist2" data-chat="chat2" onclick="abrirChat('chat2')" style="display: none">
+                              <img src="./img/avatar1.png" alt="avatar">
+                              <div class="about">
+                                  <div class="name">Instrucciones</div>
+                                  <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                              </div>
+                          </li>
+                          <li class="clearfix" id ="chatlist3" data-chat="chat3" onclick="abrirChat('chat3')"  style="display: none">
+                            <img src="./img/avatar3.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">EL AHORCADO</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> activo </div>                                            
+                            </div>
+                        </li>
+                        <li class="clearfix" id ="chatlist4" data-chat="chat4" onclick="abrirChat('chat4')"  style="display: none">
+                            <img src="./img/avatar4.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">TOP5</div>
+                                <div class="status"> <i class="fa fa-circle online"></i> activo </div>                                            
+                            </div>
+                        </li>
+                      </ul>
+                  </div>
+                  <div class="chat" id="chat1">
+                      <div class="chat-header clearfix">
+                          <div class="row">
+                              <div class="col-lg-6">
+                                  <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                      <img src="./img/avatar2.png" alt="avatar">
+                                  </a>
+                                  <div class="chat-about">
+                                      <h6 class="m-b-0">BOT</h6>
+                                      <small>En línea</small>
+                                  </div>
+                              </div>
+                              
+                          </div>
+                      </div>
+                      <div class="chat-history">
+                          <ul class="m-b-0">
+                                                             
+                          </ul>
+                      </div>
+                      <div class="chat-message clearfix">
+                          <div class="input-group mb-0">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="send-button"><i class="fa fa-send"></i></span>
+                              </div>
+                              <input type="text" class="form-control" id="message-input" placeholder="Enter text here...">                                    
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat" id="chat2" style="display: none";>
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                    <img src="./img/avatar1.png" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">Instrucciones</h6>
+                                    <small>En línea</small>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="chat-history history2">
+                        <ul class="m-b-0">
+                                                           
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="send-button2"><i class="fa fa-send"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="message-input2" placeholder="Enter text here...">                                    
+                        </div>
+                    </div>
+                </div>
+                <div class="chat" id="chat3" style="display: none";>
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                    <img src="./img/avatar3.png" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">EL AHORCADO</h6>
+                                    <small>En línea</small>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="chat-history history3">
+                        <ul class="m-b-0">
+                                                           
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="send-button3"><i class="fa fa-send"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="message-input3" placeholder="Enter text here...">                                    
+                        </div>
+                    </div>
+                </div>
+                <div class="chat" id="chat4" style="display: none";>
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                    <img src="./img/avatar4.png" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">TOP5</h6>
+                                    <small>En línea</small>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="chat-history history4">
+                        <ul class="m-b-0">
+                                                           
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="send-button4"><i class="fa fa-send"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="message-input4" placeholder="Enter text here...">                                    
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </main>
+
+    <!-- Código Javascript insertado a través de un fichero que puede ser local o externo, como aquellos que provienen de librerías (lo veremos en la clase de hoy y en adelante) -->
+    <script src="./scripts/bot.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
